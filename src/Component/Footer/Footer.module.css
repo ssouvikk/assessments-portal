@@ -1,0 +1,38 @@
+.container{
+    background-color: #172146;
+    color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5%;
+}
+
+.container > div{
+    width: 20%;
+}
+
+.container h3{
+    color: #8B90A3;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    margin: 25px 0 15px;
+}
+
+.container p{
+    text-transform: capitalize;
+    opacity: 0.8;
+    margin: 2px 0;
+    word-spacing: 1px;
+}
+
+.container i{
+    font-size: 1.5em;
+    margin: 4px 0;
+}
+
+.icons > i{
+    margin-right: 16px;
+}
+
+.mt20{
+    margin-top: 20px;
+}

@@ -1,0 +1,21 @@
+.mainHeading{
+    font-size: 2.3em;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.container{
+    margin: 0 3%;
+}
+
+.skillsPara{
+    opacity: 0.8;
+    margin-top: 12px;
+    letter-spacing: 1px;
+}
+
+.topics{
+    display: flex;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+}
+
+.container{
+    background-color: #F2F6FF;
+    min-height: 100vh;
+}
+
+.content{
+    margin-top: 55px;
+    padding: 4%;
+}
