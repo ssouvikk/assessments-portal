@@ -10,11 +10,7 @@ const SubTopic = (props) => {
                 <h3 className={styles.heading}>  {props.pos + 1}). {title} </h3>
                 {fullMarks && <p className={styles.date}> Submission Date :  {submissionDate} </p>}
             </div>
-            {fullMarks === undefined ? (
-                <p className={styles.pending}>Pending</p>
-            ) : (
-                    <p className={styles.score}> {score} / {fullMarks} </p>
-                )}
+            {fullMarks === undefined ? <p className={styles.pending}>Pending</p> : <p className={styles.score}> {score} / {fullMarks} </p>}
         </div>
     )
 }

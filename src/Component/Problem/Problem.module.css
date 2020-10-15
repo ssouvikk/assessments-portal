@@ -1,0 +1,32 @@
+.container{
+    width: 100%;
+    display: flex;
+    border: 1px solid red;
+    margin: 10px 0;
+    justify-content: space-between;
+}
+.pblmBtn{
+    background-color: #00f;
+    color: #fff;
+    display: inline-block;
+    font-style: italic;
+    padding: 20px 40px;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.details{
+    display: flex;
+    align-items: center;
+}
+
+.solveBtn{
+    border: 2px solid blue;
+    padding: 4px 10px;
+    font-style: italic;
+    font-weight: 500;
+    opacity: 0.7;
+    color: blue;
+}
