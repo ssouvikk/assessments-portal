@@ -20,8 +20,8 @@
 .container p{
     text-transform: capitalize;
     opacity: 0.8;
-    margin: 2px 0;
     word-spacing: 1px;
+    line-height: 1.7;
 }
 
 .container i{

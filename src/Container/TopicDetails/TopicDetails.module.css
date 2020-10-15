@@ -1,0 +1,33 @@
+.container{
+    background-color: #fff;
+    margin: 2% 3%;
+    padding: 3%;
+    opacity: 0.8;
+    box-shadow: -1px 0px 20px 11px #ccc
+}
+
+.topic{
+    display: flex;
+}
+
+.topic img{
+    width: 100px;
+    opacity: 1;
+}
+
+.topic div{
+    margin-left: 4%;
+    opacity: 0.8;
+}
+
+.topic h1{
+    color: #0096FF;
+}
+
+.subTopic{
+    margin-top: 26px;
+}
+
+.avgScore{
+    font-size: 13px;
+}
