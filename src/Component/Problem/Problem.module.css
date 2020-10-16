@@ -1,12 +1,9 @@
 .container{
     width: 100%;
     display: flex;
-    border: 1px solid red;
     margin: 10px 0;
-    justify-content: space-between;
 }
 .pblmBtn{
-    background-color: #00f;
     color: #fff;
     display: inline-block;
     font-style: italic;
@@ -15,18 +12,47 @@
     text-transform: capitalize;
     font-weight: 500;
     opacity: 0.8;
+    margin-right: 20px;
 }
 
 .details{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 205px);
 }
 
 .solveBtn{
-    border: 2px solid blue;
     padding: 4px 10px;
     font-style: italic;
     font-weight: 500;
     opacity: 0.7;
+    border: 2px solid blue;
     color: blue;
+}
+
+.easy{
+    background-color: #0095FF;
+}
+.med{
+    background-color: #8455FC;
+}
+.hard{
+    background-color: #FC5AA6;
+}
+
+.easyBorder{
+    border: 2px solid #0095FF;
+}
+.medBorder{
+    border: 2px solid #8455FC;
+}
+.hardBorder{
+    border: 2px solid #FC5AA6;
+}
+
+.details p {
+    text-transform: capitalize;
+    font-weight: 500;
+    opacity: 0.8;
 }

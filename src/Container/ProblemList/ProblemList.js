@@ -26,11 +26,11 @@ const ProblemList = () => {
         },
         {
             title: 'crate list from string',
-            level: 'easy',
+            level: 'hard',
             maxScore: 15,
         }, {
             title: 'crate list from string',
-            level: 'easy',
+            level: 'med',
             maxScore: 15,
         },
     ]
