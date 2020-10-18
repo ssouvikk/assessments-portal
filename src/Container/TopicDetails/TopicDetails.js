@@ -1,54 +1,41 @@
-import React from 'react'
-import SubTopic from '../../Component/SubTopic/SubTopic'
+import Axios from 'axios'
 import styles from './TopicDetails.module.css'
+import React, { useEffect, useState } from 'react'
+import { logger } from '../../Utilities/CommonMethod'
+import SubTopic from '../../Component/SubTopic/SubTopic'
 
+const TopicDetails = (props) => {
+    const [data, setdata] = useState({ topicDetails: {} })
 
-const TopicDetails = () => {
-    const data = {
-        topic: 'Python',
-        score: 20.20,
-        topicInDetail: [
-            {
-                title: 'operator and conditional statements',
-                score: 85,
-                fullMarks: 150,
-                submissionDate: '2020-08-25'
-            },
-            {
-                title: 'operator and conditional statements',
-            },
-            {
-                title: 'operator and conditional statements',
-                score: 75,
-                fullMarks: 100,
-                submissionDate: '2020-08-25'
-            },
-            {
-                title: 'looping statements',
-            }, {
-                title: 'looping statements',
-            }, {
-                title: 'looping statements',
-            }, {
-                title: 'looping statements',
-            }, {
-                title: 'looping statements',
-            },
-        ],
-    }
-    const { topicInDetail, topic, score } = data
+    useEffect(() => {
+        Axios.get('https://5ef9a09ebc5f8f0016c66d82.mockapi.io//ProjectDatas/2')
+            .then((resp) => {
+                const thatData = resp.data.value.filter((item, pos) => pos === parseInt(props.match.params.id))
+                setdata({ ...thatData[0] })
+            })
+            .catch(() => {
+                logger('data not found')
+            })
+    }, [props.match.params.id])
+
     return (
         <div className={styles.container}>
             <div className={styles.topic}>
-                <img src='https://assessments.edyoda.com/uploads/static/images/PYTHON/python_1_OJ7Al4d.png' alt='selected topic' />
+                <img src={data.img} alt='selected topic' />
                 <div>
-                    <h1> {topic} </h1>
-                    <h3> {score} %</h3>
-                    <p className={styles.avgScore}>Avg Score</p>
+                    <h1> {data.name} </h1>
+                    {data.units > 0 ? (
+                        <>
+                            <h3> {data.topicDetails.avgScore} %</h3>
+                            <p className={styles.avgScore}>Avg Score</p>
+                        </>
+                    ) : ''}
                 </div>
             </div>
             <div className={styles.subTopic}>
-                {topicInDetail.map((item, pos) => <SubTopic pos={pos} key={pos} data={item} />)}
+                {data.units !== 0 ? (
+                    data.topicDetails.topics !== undefined ? data.topicDetails.topics.map((item, pos) => <SubTopic id={props.match.params.id} pos={pos} key={pos} data={item} />) : ''
+                ) : <h2>No topics available</h2>}
             </div>
         </div>
     )

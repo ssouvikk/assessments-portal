@@ -1,15 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { ROUTE_ENDPOINT } from '../../Utilities/RouteEndPoint'
 import styles from './Topbar.module.css'
 
 const TopBar = () => {
     return (
         <div className={styles.container}>
             <div className={styles.halfNav}>
+                {/* <Link className={styles.navlink} to={ROUTE_ENDPOINT.HOME_PAGE}> */}
                 <img className={styles.logo} src={`https://assessments.edyoda.com/static/images/logo.png`} alt="siteLogo" />
-                <Link className={styles.navlink} to="/" > Practice arena </Link>
-                <Link className={styles.navlink} to="/" > classroom </Link>
-                <Link className={styles.navlink} to="/" > view jobs </Link>
+                {/* </Link> */}
+                <Link className={styles.navlink} to={ROUTE_ENDPOINT.HOME_PAGE} > Practice arena </Link>
+                <Link className={styles.navlink} to={ROUTE_ENDPOINT.CLASS_ROOM} > classroom </Link>
+                {/* <Link className={styles.navlink} to="/" > view jobs </Link> */}
             </div>
             <div className={styles.halfNav}>
                 <span>

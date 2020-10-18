@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner&display=swap');
+
 *{
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Commissioner', sans-serif;
 }
 
 .container{
@@ -11,4 +14,9 @@
 .content{
     margin-top: 55px;
     padding: 4%;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
 }

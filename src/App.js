@@ -9,6 +9,10 @@ import TopicDetails from './Container/TopicDetails/TopicDetails';
 import ProblemList from './Container/ProblemList/ProblemList';
 import SessionPlan from './Container/SessionPlan/SessionPlan';
 import SessionRecording from './Container/SessionRecording/SessionRecording';
+import ClassRoomPage from './Container/ClassRoom/ClassRoom';
+import ProgramDetails from './Container/ProgramDetails/ProgramDetails';
+import Curriculum from './Container/Curriculum/Curriculum';
+import Grades from './Container/Grades/Grades';
 
 const App = () => {
 	return (
@@ -18,10 +22,14 @@ const App = () => {
 				<div className='content'>
 					<Switch>
 						<Route exact path={ROUTE_ENDPOINT.HOME_PAGE} component={HomePage} />
-						<Route exact path={ROUTE_ENDPOINT.TOPIC_DETAILS} component={TopicDetails} />
-						<Route exact path={ROUTE_ENDPOINT.PROBLEM_LIST} component={ProblemList} />
+						<Route exact path={`${ROUTE_ENDPOINT.TOPIC_DETAILS}/:id`} component={TopicDetails} />
+						<Route exact path={`${ROUTE_ENDPOINT.PROBLEM_LIST}/:id`} component={ProblemList} />
+						<Route exact path={ROUTE_ENDPOINT.CLASS_ROOM} component={ClassRoomPage} />
+						<Route exact path={`${ROUTE_ENDPOINT.PROGRAM_DETAIL}/:id`} component={ProgramDetails} />
 						<Route exact path={ROUTE_ENDPOINT.SESSION_PLAN} component={SessionPlan} />
 						<Route exact path={ROUTE_ENDPOINT.SESSION_RECORDING} component={SessionRecording} />
+						<Route exact path={ROUTE_ENDPOINT.CURRICULUM} component={Curriculum} />
+						<Route exact path={ROUTE_ENDPOINT.GRADE} component={Grades} />
 					</Switch>
 				</div>
 				<Footer />

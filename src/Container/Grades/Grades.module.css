@@ -1,0 +1,97 @@
+.Flexrow {
+  display: flex;
+  align-items: center;
+  margin: 11px 0 0 0;
+}
+
+.FlexColumn {
+  display: flex;
+  flex-direction: column;
+  margin: 0 36px 0 0;
+}
+
+.Score {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.Parameter {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+}
+
+.ProgramDashBoard {
+  height: 100%;
+  max-width: 900px;
+  background: #f2f6ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0 48px 0;
+}
+
+.CardProgram {
+  width: 1200px;
+  background-color: #fff;
+  box-shadow: 0 0 4px #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-family: roboto, sans-serif;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.Icon {
+  width: 160px;
+  min-height: 100px;
+  margin: 24px 24px 24px 0;
+}
+
+.CardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.Heading {
+  color: #0096ff;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: 0.4px;
+  text-align: left;
+}
+
+.Status {
+  width: 90%;
+  margin: 20px auto 0px auto;
+}
+
+.Status span {
+  margin: 24px 0;
+  text-transform: capitalize;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 19px;
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
+}

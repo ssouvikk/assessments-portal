@@ -1,8 +1,7 @@
 .container{
     background-color: #fff;
     margin: 2% 3%;
-    padding: 3%;
-    opacity: 0.8;
+    padding: 5%;
     box-shadow: -1px 0px 20px 11px #ccc
 }
 
@@ -21,7 +20,9 @@
 }
 
 .topic h1{
-    color: #0096FF;
+        color: #0096FF;
+    text-transform: capitalize;
+    margin-bottom: 12px;
 }
 
 .subTopic{
