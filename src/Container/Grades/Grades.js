@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { ROUTE_ENDPOINT } from "../../Utilities/RouteEndPoint";
 import Styles from "./Grades.module.css";
 
-const Grades = () => {
+const Grades = (props) => {
     const GradeData = {
         heading: "Intro to AWS",
         Rank: 1,
@@ -12,6 +14,14 @@ const Grades = () => {
 
     return (
         <>
+            <ul className={Styles.Navtabs}>
+                <li className={Styles.NavItem}>
+                    <Link to={`${ROUTE_ENDPOINT.CURRICULUM}/${props.match.params.id1}/${props.match.params.id2}`} className={`${Styles.Navlink}`} >Units</Link>
+                </li>
+                <li className={Styles.NavItem}>
+                    <Link to={`${ROUTE_ENDPOINT.GRADE}/${props.match.params.id1}/${props.match.params.id2}`} className={`${Styles.Navlink} ${Styles.selected}`} >Grade</Link>
+                </li>
+            </ul>
             <div className={Styles.ProgramDashBoard}>
                 <div className={Styles.CardProgram}>
                     <div className={Styles.container}>

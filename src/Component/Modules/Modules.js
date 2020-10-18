@@ -6,7 +6,7 @@ import { ROUTE_ENDPOINT } from "../../Utilities/RouteEndPoint";
 const Modules = (props) => {
     return (
         <div className={styles.container}>
-            <Link to={ROUTE_ENDPOINT.CURRICULUM}>
+            <Link to={`${ROUTE_ENDPOINT.CURRICULUM}/${props.idd}/${props.index}`}>
                 <div className={styles.module_card}>
                     <div className={styles.module_logo}>
                         <img src={props.data.img} alt="module" />

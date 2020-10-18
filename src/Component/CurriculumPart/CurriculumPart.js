@@ -2,14 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ROUTE_ENDPOINT } from "../../Utilities/RouteEndPoint";
 import styles from './CurriculumPart.module.css'
-
-import {
-    Accordion,
-    AccordionItem,
-    AccordionItemButton,
-    AccordionItemHeading,
-    AccordionItemPanel,
-} from 'react-accessible-accordion';
+import { Accordion, AccordionItem, AccordionItemButton, AccordionItemHeading, AccordionItemPanel, } from 'react-accessible-accordion';
 
 
 const CurriculumPart = (props) => {
@@ -21,7 +14,7 @@ const CurriculumPart = (props) => {
                         <div>
                             <img
                                 src={props.data.img}
-                                alt="mod_pic"
+                                alt={props.data.name}
                                 className={styles.ModulePic}
                             />
                         </div>
@@ -49,13 +42,13 @@ const CurriculumPart = (props) => {
             </div>
 
             <div>
-                <Accordion>
+                <Accordion allowZeroExpanded>
                     {props.data.accordian.map((item, pos) => (
                         <AccordionItem key={pos}>
                             <div className={styles.ModuleContent} >
                                 <AccordionItemHeading>
                                     <AccordionItemButton>
-                                        {item.heading}
+                                        Day {pos + 1} |  {item}
                                     </AccordionItemButton>
                                 </AccordionItemHeading>
                                 <AccordionItemPanel>
@@ -72,21 +65,6 @@ const CurriculumPart = (props) => {
                         </AccordionItem>
                     ))}
                 </Accordion>
-
-
-                {/* {props.data.accordian.map((item, pos) => (
-                    <div className={styles.ModuleContent} key={pos}>
-                        {item.heading}
-                        <div>
-                            <div className={styles.PlanLink}>
-                                <Link to={ROUTE_ENDPOINT.SESSION_PLAN}>Session Plan</Link>
-                            </div>
-                            <div className={styles.PlanLink}>
-                                <Link to={ROUTE_ENDPOINT.SESSION_RECORDING}>Session Recording</Link>
-                            </div>
-                        </div>
-                    </div>
-                ))} */}
             </div>
         </>
     );

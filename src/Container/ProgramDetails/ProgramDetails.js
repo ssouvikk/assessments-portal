@@ -12,13 +12,13 @@ const ModuleProgress = (props) => {
             .then((resp) => {
                 const thatData = resp.data.value.filter((item, pos) => pos === parseInt(props.match.params.id))
                 setdata({ ...thatData[0] })
+                console.log(resp.data.value);
+
             })
             .catch(() => {
                 logger('data not found')
             })
     }, [props.match.params.id])
-
-
 
     return (
         <div className={styles.PageContainer}>
@@ -71,7 +71,7 @@ const ModuleProgress = (props) => {
             <section className={styles.PrimaryPending}>
                 <div className={styles.ModuleHeading}>Modules</div>
                 <div className={styles.ModulesSection}>
-                    {data.modules.map((item, pos) => <Modules data={item} key={pos} />)}
+                    {data.modules.map((item, pos) => <Modules idd={props.match.params.id} index={pos} data={item} key={pos} />)}
                 </div>
             </section>
         </div>
