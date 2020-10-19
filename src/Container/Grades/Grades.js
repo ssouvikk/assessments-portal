@@ -1,16 +1,28 @@
-import React from "react";
+import Axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { classroom } from "../../Utilities/ApiDatas";
+import { logger } from "../../Utilities/CommonMethod";
 import { ROUTE_ENDPOINT } from "../../Utilities/RouteEndPoint";
 import Styles from "./Grades.module.css";
 
 const Grades = (props) => {
-    const GradeData = {
-        heading: "Intro to AWS",
-        Rank: 1,
-        img:
-            "https://assessments.edyoda.com/uploads/static/images/module_icon/aws_4QRD91l.png",
-        SHS: "50.0",
-    };
+
+    const [data, setdata] = useState({})
+
+    useEffect(() => {
+        Axios.get('https://5ef9a09ebc5f8f0016c66d82.mockapi.io/ProjectDatas/3')
+            .then((resp) => {
+                const thatData = resp.data.value
+                    // const thatData = classroom
+                    .filter((item, pos) => pos === parseInt(props.match.params.id1))[0].modules
+                    .filter((item, pos) => pos === parseInt(props.match.params.id2))[0].curriculum
+                setdata({ ...thatData, Rank: 1, SHS: "50.0", Score: "88" })
+            })
+            .catch(() => {
+                logger('data not found')
+            })
+    }, [props.match.params.id1, props.match.params.id2])
 
     return (
         <>
@@ -25,20 +37,20 @@ const Grades = (props) => {
             <div className={Styles.ProgramDashBoard}>
                 <div className={Styles.CardProgram}>
                     <div className={Styles.container}>
-                        <img src={GradeData.img} className={Styles.Icon} alt='gradeImg' />
+                        <img src={data.img} className={Styles.Icon} alt='gradeImg' />
                         <div className={Styles.CardContainer}>
-                            <div className={Styles.Heading}>{GradeData.heading}</div>
+                            <div className={Styles.Heading}>{data.name}</div>
                             <div className={Styles.Flexrow}>
                                 <div className={Styles.FlexColumn}>
-                                    <span className={Styles.Score}>{GradeData.Rank}</span>
+                                    <span className={Styles.Score}>{data.Rank}</span>
                                     <span className={Styles.Parameter}>Class Rank</span>
                                 </div>
                                 <div className={Styles.FlexColumn}>
-                                    <span className={Styles.Score}>%</span>
+                                    <span className={Styles.Score}>  {data.Score} %</span>
                                     <span className={Styles.Parameter}>Avg Score</span>
                                 </div>
                                 <div className={Styles.FlexColumn}>
-                                    <span className={Styles.Score}>{GradeData.SHS}</span>
+                                    <span className={Styles.Score}>{data.SHS}</span>
                                     <span className={Styles.Parameter}>SHS</span>
                                 </div>
                             </div>

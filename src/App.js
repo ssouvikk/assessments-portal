@@ -28,8 +28,8 @@ const App = () => {
 						<Route exact path={`${ROUTE_ENDPOINT.PROGRAM_DETAIL}/:id`} component={ProgramDetails} />
 						<Route exact path={`${ROUTE_ENDPOINT.CURRICULUM}/:id1/:id2`} component={Curriculum} />
 						<Route exact path={`${ROUTE_ENDPOINT.GRADE}/:id1/:id2`} component={Grades} />
-						<Route exact path={ROUTE_ENDPOINT.SESSION_PLAN} component={SessionPlan} />
-						<Route exact path={ROUTE_ENDPOINT.SESSION_RECORDING} component={SessionRecording} />
+						<Route exact path={`${ROUTE_ENDPOINT.SESSION_PLAN}/:id1/:id2/:id3`} component={SessionPlan} />
+						<Route exact path={`${ROUTE_ENDPOINT.SESSION_RECORDING}/:id1/:id2/:id3`} component={SessionRecording} />
 					</Switch>
 				</div>
 				<Footer />

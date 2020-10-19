@@ -8,7 +8,7 @@ const ProblemList = (props) => {
     const [data, setdata] = useState([])
 
     useEffect(() => {
-        Axios.get('https://5ef9a09ebc5f8f0016c66d82.mockapi.io//ProjectDatas/2')
+        Axios.get('https://5ef9a09ebc5f8f0016c66d82.mockapi.io/ProjectDatas/2')
             .then((resp) => {
                 const thatData = resp.data.value.filter((item, pos) => pos === parseInt(props.match.params.id))
                 setdata([...thatData[0].topicDetails.problems])

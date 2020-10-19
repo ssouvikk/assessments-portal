@@ -48,16 +48,16 @@ const CurriculumPart = (props) => {
                             <div className={styles.ModuleContent} >
                                 <AccordionItemHeading>
                                     <AccordionItemButton>
-                                        Day {pos + 1} |  {item}
+                                        Day {pos + 1} |  {item.heading}
                                     </AccordionItemButton>
                                 </AccordionItemHeading>
                                 <AccordionItemPanel>
                                     <div>
                                         <div className={styles.PlanLink}>
-                                            <Link to={ROUTE_ENDPOINT.SESSION_PLAN}>Session Plan</Link>
+                                            <Link to={`${ROUTE_ENDPOINT.SESSION_PLAN}/${props.id1}/${props.id2}/${pos}`}>Session Plan</Link>
                                         </div>
                                         <div className={styles.PlanLink}>
-                                            <Link to={ROUTE_ENDPOINT.SESSION_RECORDING}>Session Recording</Link>
+                                            <Link to={`${ROUTE_ENDPOINT.SESSION_RECORDING}/${props.id1}/${props.id2}/${pos}`}>Session Recording</Link>
                                         </div>
                                     </div>
                                 </AccordionItemPanel>

@@ -26,7 +26,7 @@ const SessionPlan = () => {
             },
         ],
         sessionLink: 'https://zekelabs.zoom.us/meeting/register/tZYufuChrj8qHNElsq4QJSq6f3rQKQie7WFA',
-        psw: 'AWS-LIVE',
+        psw: 'Edyoda-LIVE',
     }
     return (
         <div className={styles.container} >
